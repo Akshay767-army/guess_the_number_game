@@ -1,0 +1,59 @@
+import java.util.Scanner;
+import java.util.Random;
+
+class Game{
+    public int Number;
+    public int inputNumber;
+    public int noOfGuess=0;
+
+    public int getNoOfGuess() {
+        return noOfGuess;
+    }
+
+    public void setNoOfGuess(int noOfGuess) {
+        this.noOfGuess = noOfGuess;
+    }
+
+    Game(){
+       Random ran=new Random();
+       this.Number=ran.nextInt(100);
+    }
+    void takeUserInput(){
+        System.out.print("guess the number:");
+        Scanner sc =new Scanner(System.in);
+        inputNumber=sc.nextInt();
+    }
+    boolean isCorrectNumber(){
+        noOfGuess++;
+
+        if (inputNumber==Number){
+            System.out.format("yes you guessed right number,it was %d\n you guessed it  in %d attempts\n",Number,noOfGuess);
+            return true;
+        }
+        else if(inputNumber<Number){
+            System.out.println("too low....");
+        }
+        else if(inputNumber>Number){
+            System.out.println("too high....");
+        }
+
+        return false;
+
+    }
+}
+
+public class Main{
+    public static void main(String[] args) {
+
+
+        Game g=new Game();
+
+          boolean b=false;
+          while(!b) {
+              g.takeUserInput();
+              b = g.isCorrectNumber();
+              System.out.println(b);
+          }
+
+    }
+}
