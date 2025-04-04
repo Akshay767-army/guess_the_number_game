@@ -19,7 +19,7 @@ How to Run
 -----------------------------------------------------------------------------------------
 1.Clone the repository to your local machine:
 
-git clone https://github.com/your-username/guess-the-number-game-java.git
+git clone https://github.com/Akshay767-army/guess_the_number_game.git
 -----------------------------------------------------------------------------------------
 2.Navigate to the project directory:
 
